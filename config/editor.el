@@ -51,7 +51,7 @@
 ;; Enable delete trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; Disable backup and auto save.
+;; backup and auto save.
 (setq backup-inhibited t)
 (setq auto-save-default nil)
 
@@ -106,3 +106,31 @@
 	(define-key ido-completion-map (kbd "C-n") 'ido-next-match)
 	(define-key ido-completion-map (kbd "C-p") 'ido-prev-match))
 (add-hook 'ido-setup-hook 'ido-define-keys)
+
+
+;; ==================================================
+;;               AUTO MODES
+;; ==================================================
+
+;; Ruby
+(add-to-list 'auto-mode-alist '("Gemfile\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Guardfile\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("config.ru\\'" . ruby-mode))
+
+;; Web-mode
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.ctp\\'" . web-mode))
+
+;; Emmet
+(add-hook 'html-mode-hook 'emmet-mode)
+(add-hook 'web-mode-hook 'emmet-mode)
+
+;; ORG mode
+(add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
+
+
+;; Start fullscreen
+(custom-set-variables
+ '(initial-frame-alist (quote ((fullscreen . maximized)))))
