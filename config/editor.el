@@ -108,6 +108,11 @@
 (add-hook 'ido-setup-hook 'ido-define-keys)
 
 
+;; Disable .# lockfile
+(setq create-lockfiles nil)
+
+
+
 ;; ==================================================
 ;;               AUTO MODES
 ;; ==================================================
