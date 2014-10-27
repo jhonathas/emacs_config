@@ -37,10 +37,10 @@
 (unless (package-installed-p 'yaml-mode)
 	(package-install 'yaml-mode))
 
-;; flymake-ruby for on the fly syntax checking
-(unless (package-installed-p 'flymake-ruby)
-  (package-install 'flymake-ruby))
-(add-hook 'ruby-mode-hook 'flymake-ruby-load)
+;;flycheck for on the fly syntax checking
+(unless (package-installed-p 'flycheck)
+  (package-install 'flycheck))
+(add-hook 'after-init-hook 'global-flycheck-mode)
 
 ;; Scala-mode2
 (unless (package-installed-p 'scala-mode2)

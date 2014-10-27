@@ -58,9 +58,6 @@
 ;; Dired: reuse current buffer by pressing 'a'.
 (put 'dired-find-alternate-file 'disabled nil)
 
-;; Enable iBuffer
-(iswitchb-mode)
-
 ;; Auto revert file
 ;; Auto reload file when changed on another editor
 (global-auto-revert-mode 1)

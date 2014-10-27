@@ -26,3 +26,8 @@
 (define-key projectile-mode-map [?\s-p] 'projectile-switch-project)
 (define-key projectile-mode-map [?\s-f] 'projectile-find-file)
 (define-key projectile-mode-map [?\s-g] 'projectile-grep)
+
+;; Keybinding
+(global-set-key (kbd "C-|") 'align-regexp)
+(global-set-key "\C-h" 'backward-delete-char-untabify)
+(define-key isearch-mode-map "\C-h" 'isearch-delete-char)
