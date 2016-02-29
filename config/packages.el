@@ -62,6 +62,7 @@
 (ido-everywhere 1)
 (flx-ido-mode 1)
 
+
 ;; disable ido faces to see flx highlights.
 (setq ido-use-faces nil)
 
@@ -76,3 +77,10 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ssp\\'" . web-mode))
+
+(add-to-list 'load-path "/plugins/neotree")
+  (require 'neotree)
+  (global-set-key [f8] 'neotree-toggle)
+
+(setq projectile-switch-project-action 'neotree-projectile-action)
+(setq neo-smart-open t)

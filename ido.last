@@ -1,0 +1,72 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/jhonathas/.emacs.d/" . "config/")
+ ("/Users/jhonathas/src/example_app/www/" . "js/")
+ ("/Users/jhonathas/src/example_app/" . "www/")
+ ("/Users/jhonathas/src/" . "gp/")
+ ("/Users/jhonathas/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/jhonathas/.emacs.d/config/"
+ "/Users/jhonathas/src/gp/"
+ "/Users/jhonathas/src/example_app/"
+ "/Users/jhonathas/src/example_app/www/js/"
+ "/Users/jhonathas/src/campainha/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "packages.el"
+ "editor.el"
+ "Dockerfile"
+ "config.xml"
+ "index.js"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/jhonathas/src/campainha/" (22227 37543 0 0) "vendor/" "tmp/" "README.rdoc" "Rakefile" "public/" "Procfile" "log/" "lib/" "Gemfile.lock" "Gemfile" "features/" "Dockerfile" "docker-compose.yml" "db/" "config.ru" "config/" "bin/" "app/" ".ruby-version" ".powrc" ".powenv" ".gitignore" ".git/" ".env.example" ".env" ".DS_Store" ".docker/" ".cloud66/" ".bundle/" "../" "./")
+
+ ("/Users/jhonathas/.emacs.d/config/" (22228 39507 0 0) "packages.el" "kbd.el" "funcs.el" "editor.el" "../" "./")
+
+ ("/Users/jhonathas/.emacs.d/" (22228 38570 0 0) "themes/" "snippets/" "recentf" "README.md" "projectile.cache" "projectile-bookmarks.eld" "plugins/" "init.el" "ido.last" "elpa/" "config/" "auto-save-list/" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/jhonathas/Desktop/" (22220 47050 0 0) "Simulator Screen Shot 23 de fev de 2016 16.31.02.png" "Simulator Screen Shot 23 de fev de 2016 16.30.12.png" "Simulator Screen Shot 23 de fev de 2016 16.30.08.png" "Simulator Screen Shot 23 de fev de 2016 16.30.02.png" "Simulator Screen Shot 23 de fev de 2016 16.29.57.png" "Captura de Tela 2016-02-23 às 16.49.25.png" ".localized" ".DS_Store" "../" "./")
+
+ ("/Users/jhonathas/src/gp/app/assets/" (22122 65407 0 0) "stylesheets/" "javascripts/" "images/" "fonts/" ".DS_Store" "../" "./")
+
+ ("/Users/jhonathas/src/gp/app/assets/javascripts/" (22109 64870 0 0) "translations/" "layout_solido/" "layout.js" "home.js" "application.js" "app.js" "admin.js" "admin/" "actions/" "../" "./")
+
+ ("/Users/jhonathas/src/gp/app/assets/javascripts/layout_solido/" (22191 34805 0 0) "video/" "vendor/" "vegas/" "test.js" "superslides-0.6.2/" "portfolio.js" "popup/" "plugins.js.erb" "picker/" "main.js" "jquery.validate.js" "jquery.superslides.js" "jquery.sticky.js" "jquery.smoothwheel.js" "jquery.nav.js" "jquery.isotope.min.js" "jquery.inview.js" "jquery.hoverdir.js" "jquery.form.js" "jquery.carouFredSel-6.2.1.js" "jquery.carouFredSel-6.2.1-packed.js" "jquery.bxslider/" "caroussel/" "_notes/" "../" "./")
+
+ ("/Users/jhonathas/src/gp/app/assets/javascripts/layout_solido/superslides-0.6.2/" (22038 49385 0 0) "test/" "superslides.jquery.json" "src/" "scss/" "package.json" "libs/" "Gruntfile.js" "examples/" "dist/" "_notes/" ".jshintrc" ".gitignore" "../" "./")
+
+ ("/Users/jhonathas/src/gp/app/assets/javascripts/layout_solido/superslides-0.6.2/examples/" (22038 49385 0 0) "touch.html" "single.html" "simple.html" "preserved-images.html" "play.html" "multiple.html" "javascripts/" "index.html" "images/" "fade.html" "custom-pagination.html" "custom-fx.html" "constrained.html" "_notes/" "../" "./")
+
+ ("/Users/jhonathas/src/gp/app/assets/javascripts/layout_solido/superslides-0.6.2/examples/javascripts/" (22038 49385 0 0) "jquery.easing.1.3.js" "jquery.animate-enhanced.min.js" "hammer.min.js" "application.js" "_notes/" "../" "./")
+
+ ("/Users/jhonathas/src/gp/app/" (22122 65407 0 0) "views/" "uploaders/" "services/" "reports/" "policies/" "models/" "mailers/" "jobs/" "helpers/" "controllers/" "assets/" ".DS_Store" "../" "./")
+
+ ("/Users/jhonathas/src/gp/app/views/" (22038 49385 0 0) "subscription_mailer/" "shared/" "sales/" "products/" "packages/" "layouts/" "home/" "devise/" "contact_mailer/" "checkouts/" "admin/" "../" "./")
+
+ ("/Users/jhonathas/src/gp/app/views/checkouts/" (22219 7221 0 0) "new.html.erb" "index.html.erb" "complete.html.erb" "_shop_form.html.erb" "_shipping_form.html.erb" "_payment_form.html.erb" "../" "./")
+
+ ("/Users/jhonathas/src/gp/" (22187 23943 0 0) "vendor/" "tmp/" "test/" "README.rdoc" "Rakefile" "public/" "log/" "lib/" "Gemfile.lock" "Gemfile" "Dockerfile" "docker-compose.yml" "db/" "config.ru" "config/" "bin/" "app/" ".ruby-version" ".gitignore" ".git/" ".env.example" ".env" ".DS_Store" ".docker/" ".cloud66/" "../" "./")
+
+ ("/Users/jhonathas/src/" (22228 36265 0 0) "precoamigo/" "persisto/" "ninja/" "mp_shopify/" "mobile/" "maxipago_checkout/" "maxipago/" "gp/" "gog/" "fantasy_app/" "example_app/" "elixir-dockerfile/" "easy-diarista/" "Dockerfile" "coachStar/" "classrl/" "campainhaApp/" "campainha/" "call4paperz/" "akasvetlana/" ".DS_Store" "../" "./")
+
+ ("/Users/jhonathas/" (22228 33232 0 0) "VirtualBox VMs/" "src/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "Applications/" ".vscode/" ".vimrc" ".viminfo" ".vim.d/" ".vim.backup/" ".vim/" ".v8flags.4.6.85.31.jhonathas.json" ".v8flags.4.5.103.35.jhonathas.json" ".Trash/" ".subversion/" ".ssh/" ".rnd" ".putty/" ".plugman/" ".pgpass" ".oracle_jre_usage/" ".npm/" ".node_repl_history" ".node-gyp/" ".ngrok2/" ".netrc" ".local/" ".itmstransporter/" ".ionic/" ".httpie/" ".heroku/" ".gradle/" ".gitkraken/" ".gitconfig" ".emacs.d_vinicius/" ".emacs.d/" ".DS_Store" ".dropbox/" ".docker/" ".cups/" ".cordova/" ".config/" ".cloud66/" ".CFUserTextEncoding" ".cache/" ".bash_sessions/" ".bash_profile" ".bash_history" ".bash.d/" ".android/" "../" "./")
+
+ ("/Users/jhonathas/src/example_app/www/js/" (22184 42678 0 0) "index.js" "../" "./")
+
+ ("/Users/jhonathas/src/example_app/www/" (22184 42678 0 0) "js/" "index.html" "img/" "css/" "../" "./")
+
+ ("/Users/jhonathas/src/example_app/" (22184 42678 0 0) "www/" "plugins/" "platforms/" "hooks/" "config.xml" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

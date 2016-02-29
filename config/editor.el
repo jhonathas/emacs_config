@@ -28,11 +28,14 @@
 (setq show-paren-delay 0)
 
 ;; Use 2 spaces to indent code instead of tabs.
+
+;; (setq-default indent-tabs-mode nil)
+(setq web-mode-markup-indent-offset 2)
 (setq indent-tabs-mode nil)
 (setq ruby-deep-indent-paren nil)
 (setq-default tab-width 2)
 (setq ruby-indent-level 2)
-(setq js-indent-level 2)
+(setq js-indent-level 4)
 
 ;; Delete the selection with a keypress.
 (delete-selection-mode t)
