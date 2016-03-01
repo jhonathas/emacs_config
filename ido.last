@@ -2,36 +2,47 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/Users/jhonathas/src/persisto/" . "obradegenio/")
  ("/Users/jhonathas/.emacs.d/" . "config/")
  ("/Users/jhonathas/src/example_app/www/" . "js/")
  ("/Users/jhonathas/src/example_app/" . "www/")
- ("/Users/jhonathas/src/" . "gp/")
- ("/Users/jhonathas/" . ".emacs.d/")
+ ("/Users/jhonathas/src/" . "example_app/")
+ ("/Users/jhonathas/" . "src/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/jhonathas/src/example_app/www/js/"
+ #("/Users/jhonathas/src/persisto/obradegenio/" 17 21 (face flx-highlight-face))
+ "/Users/jhonathas/src/easy-diarista/"
  "/Users/jhonathas/.emacs.d/config/"
  "/Users/jhonathas/src/gp/"
  "/Users/jhonathas/src/example_app/"
- "/Users/jhonathas/src/example_app/www/js/"
  "/Users/jhonathas/src/campainha/"
 )
 
 ;; ----- ido-work-file-list -----
 (
- "packages.el"
- "editor.el"
- "Dockerfile"
- "config.xml"
  "index.js"
+ ".env"
+ "Dockerfile"
+ "Gemfile"
+ "editor.el"
+ "packages.el"
+ "config.xml"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/jhonathas/src/campainha/" (22227 37543 0 0) "vendor/" "tmp/" "README.rdoc" "Rakefile" "public/" "Procfile" "log/" "lib/" "Gemfile.lock" "Gemfile" "features/" "Dockerfile" "docker-compose.yml" "db/" "config.ru" "config/" "bin/" "app/" ".ruby-version" ".powrc" ".powenv" ".gitignore" ".git/" ".env.example" ".env" ".DS_Store" ".docker/" ".cloud66/" ".bundle/" "../" "./")
+ (#("/Users/jhonathas/src/persisto/obradegenio/" 17 21 (face flx-highlight-face)) (22228 48193 0 0) "vendor/" "tmp/" "test/" "README.rdoc" "Rakefile" "public/" "Procfile" "log/" "lib/" "Gemfile.lock" "Gemfile" "Dockerfile" "docker-compose.yml" "db/" "config.ru" "config/" "bin/" "app/" ".ruby-version" ".gitignore" ".git/" ".env.example" ".env" ".docker/" ".cloud66/" "../" "./")
 
- ("/Users/jhonathas/.emacs.d/config/" (22228 39507 0 0) "packages.el" "kbd.el" "funcs.el" "editor.el" "../" "./")
+ ("/Users/jhonathas/src/easy-diarista/" (22228 51888 0 0) "vendor/" "test/" "README.rdoc" "Rakefile" "public/" "Procfile" "log/" "lib/" "Gemfile.lock" "Gemfile" "faye.ru" "dump.rdb" "Dockerfile" "docker-compose.yml" "db/" "config.ru" "config/" "bin/" "app/" ".ruby-version" ".gitignore" ".git/" ".env.production" ".env" ".DS_Store" ".docker/" "../" "./")
+
+ ("/Users/jhonathas/src/persisto/" (22186 24527 0 0) "sensus/" "obradegenio/" ".DS_Store" "../" "./")
+
+ ("/Users/jhonathas/.emacs.d/config/" (22228 40487 0 0) "packages.el" "kbd.el" "funcs.el" "editor.el" "../" "./")
+
+ ("/Users/jhonathas/src/campainha/" (22227 37543 0 0) "vendor/" "tmp/" "README.rdoc" "Rakefile" "public/" "Procfile" "log/" "lib/" "Gemfile.lock" "Gemfile" "features/" "Dockerfile" "docker-compose.yml" "db/" "config.ru" "config/" "bin/" "app/" ".ruby-version" ".powrc" ".powenv" ".gitignore" ".git/" ".env.example" ".env" ".DS_Store" ".docker/" ".cloud66/" ".bundle/" "../" "./")
 
  ("/Users/jhonathas/.emacs.d/" (22228 38570 0 0) "themes/" "snippets/" "recentf" "README.md" "projectile.cache" "projectile-bookmarks.eld" "plugins/" "init.el" "ido.last" "elpa/" "config/" "auto-save-list/" ".gitignore" ".git/" "../" "./")
 
