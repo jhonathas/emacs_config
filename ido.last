@@ -6,26 +6,26 @@
  ("/Users/jhonathas/.emacs.d/" . "config/")
  ("/Users/jhonathas/src/example_app/www/" . "js/")
  ("/Users/jhonathas/src/example_app/" . "www/")
- ("/Users/jhonathas/src/" . "example_app/")
+ ("/Users/jhonathas/src/" . "gp/")
  ("/Users/jhonathas/" . "src/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/jhonathas/src/gp/"
  "/Users/jhonathas/src/example_app/www/js/"
- #("/Users/jhonathas/src/persisto/obradegenio/" 17 21 (face flx-highlight-face))
+ "/Users/jhonathas/src/persisto/obradegenio/"
  "/Users/jhonathas/src/easy-diarista/"
  "/Users/jhonathas/.emacs.d/config/"
- "/Users/jhonathas/src/gp/"
  "/Users/jhonathas/src/example_app/"
  "/Users/jhonathas/src/campainha/"
 )
 
 ;; ----- ido-work-file-list -----
 (
+ "Dockerfile"
  "index.js"
  ".env"
- "Dockerfile"
  "Gemfile"
  "editor.el"
  "packages.el"
@@ -34,7 +34,13 @@
 
 ;; ----- ido-dir-file-cache -----
 (
- (#("/Users/jhonathas/src/persisto/obradegenio/" 17 21 (face flx-highlight-face)) (22228 48193 0 0) "vendor/" "tmp/" "test/" "README.rdoc" "Rakefile" "public/" "Procfile" "log/" "lib/" "Gemfile.lock" "Gemfile" "Dockerfile" "docker-compose.yml" "db/" "config.ru" "config/" "bin/" "app/" ".ruby-version" ".gitignore" ".git/" ".env.example" ".env" ".docker/" ".cloud66/" "../" "./")
+ ("/Users/jhonathas/src/gp/" (22187 30565 0 0) "vendor/" "tmp/" "test/" "README.rdoc" "Rakefile" "public/" "log/" "lib/" "Gemfile.lock" "Gemfile" "Dockerfile" "docker-compose.yml" "db/" "config.ru" "config/" "bin/" "app/" ".ruby-version" ".gitignore" ".git/" ".env.example" ".env" ".DS_Store" ".docker/" ".cloud66/" "../" "./")
+
+ ("/Users/jhonathas/src/" (22187 21791 0 0) "persisto/" "mobile/" "gp/" "gog/" "coachStar/" "campainhaApp/" "campainha/" "api_checkout/" ".DS_Store" "../" "./")
+
+ ("/Users/jhonathas/" (22229 38428 0 0) "VirtualBox VMs/" "src/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "Applications (Parallels)/" "Applications/" ".vimrc" ".viminfo" ".vim.d/" ".vim/" ".v8flags.4.5.103.35.jhonathas.json" ".Trash/" ".ssh/" ".plugman/" ".plexht/" ".oracle_jre_usage/" ".npm/" ".node-gyp/" ".netrc" ".local/" ".ionic/" ".inputrc" ".httpie/" ".heroku/" ".gitconfig" ".emacs.d.vinicius/" ".emacs.d/" ".DS_Store" ".dropbox/" ".docker/" ".cups/" ".cordova/" ".config/" ".cloud66/" ".CFUserTextEncoding" ".cache/" ".bash_profile" ".bash_history" ".bash.d/" ".babel.json" "../" "./")
+
+ ("/Users/jhonathas/src/persisto/obradegenio/" (22228 48193 0 0) "vendor/" "tmp/" "test/" "README.rdoc" "Rakefile" "public/" "Procfile" "log/" "lib/" "Gemfile.lock" "Gemfile" "Dockerfile" "docker-compose.yml" "db/" "config.ru" "config/" "bin/" "app/" ".ruby-version" ".gitignore" ".git/" ".env.example" ".env" ".docker/" ".cloud66/" "../" "./")
 
  ("/Users/jhonathas/src/easy-diarista/" (22228 51888 0 0) "vendor/" "test/" "README.rdoc" "Rakefile" "public/" "Procfile" "log/" "lib/" "Gemfile.lock" "Gemfile" "faye.ru" "dump.rdb" "Dockerfile" "docker-compose.yml" "db/" "config.ru" "config/" "bin/" "app/" ".ruby-version" ".gitignore" ".git/" ".env.production" ".env" ".DS_Store" ".docker/" "../" "./")
 
@@ -65,12 +71,6 @@
  ("/Users/jhonathas/src/gp/app/views/" (22038 49385 0 0) "subscription_mailer/" "shared/" "sales/" "products/" "packages/" "layouts/" "home/" "devise/" "contact_mailer/" "checkouts/" "admin/" "../" "./")
 
  ("/Users/jhonathas/src/gp/app/views/checkouts/" (22219 7221 0 0) "new.html.erb" "index.html.erb" "complete.html.erb" "_shop_form.html.erb" "_shipping_form.html.erb" "_payment_form.html.erb" "../" "./")
-
- ("/Users/jhonathas/src/gp/" (22187 23943 0 0) "vendor/" "tmp/" "test/" "README.rdoc" "Rakefile" "public/" "log/" "lib/" "Gemfile.lock" "Gemfile" "Dockerfile" "docker-compose.yml" "db/" "config.ru" "config/" "bin/" "app/" ".ruby-version" ".gitignore" ".git/" ".env.example" ".env" ".DS_Store" ".docker/" ".cloud66/" "../" "./")
-
- ("/Users/jhonathas/src/" (22228 36265 0 0) "precoamigo/" "persisto/" "ninja/" "mp_shopify/" "mobile/" "maxipago_checkout/" "maxipago/" "gp/" "gog/" "fantasy_app/" "example_app/" "elixir-dockerfile/" "easy-diarista/" "Dockerfile" "coachStar/" "classrl/" "campainhaApp/" "campainha/" "call4paperz/" "akasvetlana/" ".DS_Store" "../" "./")
-
- ("/Users/jhonathas/" (22228 33232 0 0) "VirtualBox VMs/" "src/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "Applications/" ".vscode/" ".vimrc" ".viminfo" ".vim.d/" ".vim.backup/" ".vim/" ".v8flags.4.6.85.31.jhonathas.json" ".v8flags.4.5.103.35.jhonathas.json" ".Trash/" ".subversion/" ".ssh/" ".rnd" ".putty/" ".plugman/" ".pgpass" ".oracle_jre_usage/" ".npm/" ".node_repl_history" ".node-gyp/" ".ngrok2/" ".netrc" ".local/" ".itmstransporter/" ".ionic/" ".httpie/" ".heroku/" ".gradle/" ".gitkraken/" ".gitconfig" ".emacs.d_vinicius/" ".emacs.d/" ".DS_Store" ".dropbox/" ".docker/" ".cups/" ".cordova/" ".config/" ".cloud66/" ".CFUserTextEncoding" ".cache/" ".bash_sessions/" ".bash_profile" ".bash_history" ".bash.d/" ".android/" "../" "./")
 
  ("/Users/jhonathas/src/example_app/www/js/" (22184 42678 0 0) "index.js" "../" "./")
 

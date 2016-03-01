@@ -78,8 +78,10 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ssp\\'" . web-mode))
 
-(add-to-list 'package-archives
-						 '("melpa" . "http://melpa.org/packages/"))
+
+(add-to-list 'load-path "/plugins/neotree")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
 
 (setq projectile-switch-project-action 'neotree-projectile-action)
 (setq neo-smart-open t)
