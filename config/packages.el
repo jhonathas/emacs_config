@@ -85,3 +85,11 @@
 
 (setq projectile-switch-project-action 'neotree-projectile-action)
 (setq neo-smart-open t)
+
+
+;; Integration emacs with Dash
+(add-to-list 'load-path "/Users/jhonathas/.emacs.d/plugins/dash/")
+(autoload 'dash-at-point "dash-at-point"
+          "Search the word at point with Dash." t nil)
+(global-set-key "\C-cf" 'dash-at-point)
+(global-set-key "\C-ck" 'dash-at-point-with-docset)
