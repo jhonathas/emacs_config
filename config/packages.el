@@ -79,7 +79,7 @@
 (add-to-list 'auto-mode-alist '("\\.ssp\\'" . web-mode))
 
 
-(add-to-list 'load-path "/plugins/neotree")
+(add-to-list 'load-path "/Users/jhonathas/.emacs.d/plugins/neotree")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 
