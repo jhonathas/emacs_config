@@ -78,8 +78,18 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ssp\\'" . web-mode))
 
-(add-to-list 'package-archives
-						 '("melpa" . "http://melpa.org/packages/"))
+
+(add-to-list 'load-path "/Users/jhonathas/.emacs.d/plugins/neotree")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
 
 (setq projectile-switch-project-action 'neotree-projectile-action)
 (setq neo-smart-open t)
+
+
+;; Integration emacs with Dash
+(add-to-list 'load-path "/Users/jhonathas/.emacs.d/plugins/dash/")
+(autoload 'dash-at-point "dash-at-point"
+          "Search the word at point with Dash." t nil)
+(global-set-key "\C-cf" 'dash-at-point)
+(global-set-key "\C-ck" 'dash-at-point-with-docset)
