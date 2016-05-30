@@ -3,3 +3,5 @@ elpa/
 projectile-bookmarks.eld
 url/
 .mc-lists.el
+ido.last
+recentf
