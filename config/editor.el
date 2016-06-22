@@ -90,7 +90,9 @@
 (setq linum-format "%d ")
 
 ;; Set Monaco as default font on mac
-(if (eq system-type 'darwin) (set-default-font "Monaco-16"))
+(if (eq system-type 'darwin) (set-default-font "Monaco-18"))
+
+(setq-default line-spacing 5)
 
 ;; automatically insert the right matching bracket
 (electric-pair-mode 1)
