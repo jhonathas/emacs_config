@@ -1,34 +1,90 @@
 (message "- packages configurations...")
 
-;; Melpa
 (require 'package)
-(add-to-list 'package-archives
-  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
-;; Marmalade
-(require 'package)
-(add-to-list 'package-archives
-'("marmalade" . "http://marmalade-repo.org/packages/"))
-
+;; Use Package before Emacs initialization.
+(setq package-enable-at-startup nil)
 (package-initialize)
 
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
+;; Magit - Git client
+(unless (package-installed-p 'magit) (package-install 'magit))
+(global-set-key (kbd "C-c g") 'magit-status)
 
+;; Emmet mode (aka Zen Coding)
+(unless (package-installed-p 'emmet-mode) (package-install 'emmet-mode))
+(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+(add-hook 'web-mode-hook  'emmet-mode)
+(add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent 2 spaces.
+(define-key emmet-mode-keymap (kbd "C-j") nil) ;; C-RET is enough
 
+;; multiple-cursors
+(unless (package-installed-p 'multiple-cursors) (package-install 'multiple-cursors))
+(require 'multiple-cursors)
+(global-set-key (kbd "C-c m l l") 'mc/edit-lines)
+(global-set-key (kbd "C-c m l b") 'mc/edit-beginnings-of-lines)
+(global-set-key (kbd "C-c m l e") 'mc/edit-ends-of-lines)
+(global-set-key (kbd "C-c m a a") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c m a r") 'mc/mark-all-in-region)
+(global-set-key (kbd "C-c m e") 'mc/mark-more-like-this-extended)
+(global-set-key (kbd "C-c m t") 'mc/mark-sgml-tag-pair)
+(global-set-key (kbd "C-c m SPC") 'set-rectangular-region-anchor)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-{") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-}") 'mc/skip-to-previous-like-this)
 
-;; LOCAL PACKAGES
+;; expand-region - extension to increase selected region by semantic units
+(unless (package-installed-p 'expand-region) (package-install 'expand-region))
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
 
-;; Integration emacs with Dash
-(add-to-list 'load-path "~/.emacs.d/plugins/dash/")
-(autoload 'dash-at-point "dash-at-point"
-          "Search the word at point with Dash." t nil)
-(global-set-key "\C-cf" 'dash-at-point)
-(global-set-key "\C-ck" 'dash-at-point-with-docset)
+;; SCSS mode
+(unless (package-installed-p 'scss-mode) (package-install 'scss-mode))
+(require 'scss-mode)
+(setq scss-compile-at-save nil)
+(setq css-indent-offset 2)
 
+;; YAML mode
+(unless (package-installed-p 'yaml-mode) (package-install 'yaml-mode))
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
-;; INSTALLED PACKAGES
+;; Syntax highlighting for Slim
+(unless (package-installed-p 'slim-mode)
+  (package-install 'slim-mode))
+
+;;flycheck for on the fly syntax checking
+(unless (package-installed-p 'flycheck)
+  (package-install 'flycheck))
+(add-hook 'after-init-hook 'global-flycheck-mode)
+
+;; inf-ruby provides a REPL buffer connected to a Ruby subprocess
+(unless (package-installed-p 'inf-ruby)
+  (package-install 'inf-ruby))
+
+;; Projectile is a project interaction library for Emacs
+(unless (package-installed-p 'projectile)
+  (package-install 'projectile))
+(projectile-global-mode)
+(define-key projectile-mode-map [?\s-d] 'projectile-find-dir)
+(define-key projectile-mode-map [?\s-p] 'projectile-switch-project)
+(define-key projectile-mode-map [?\s-f] 'projectile-find-file)
+(define-key projectile-mode-map [?\s-g] 'projectile-grep)
+
+;; Lorem Ipsum mode
+(unless (package-installed-p 'lorem-ipsum) (package-install 'lorem-ipsum))
+(require 'lorem-ipsum)
+
+;; Fuzzy matching for Emacs ... a la Sublime Text.
+(unless (package-installed-p 'flx-ido)
+  (package-install 'flx-ido))
+(flx-ido-mode 1)
+(setq ido-use-faces 1) ;; disable ido faces to see flx highlights.
+
 
 ;; Yasnippet - A template system for Emacs
 (unless (package-installed-p 'yasnippet) (package-refresh-contents)
@@ -43,53 +99,68 @@
         yas-completing-prompt
         yas-no-prompt))
 
-;; Syntax highlighting for Slim
-(unless (package-installed-p 'slim-mode) (package-refresh-contents)
-  (package-install 'slim-mode))
+;; Markdown mode
+(unless (package-installed-p 'markdown-mode)
+  (package-install 'markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-;; yaml-mode
-(unless (package-installed-p 'yaml-mode)  (package-refresh-contents)
-	(package-install 'yaml-mode))
+;; web-mode - an autonomous emacs major-mode for editing web templates
+(unless (package-installed-p 'web-mode) (package-install 'web-mode))
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[gj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
-;;flycheck for on the fly syntax checking
-(unless (package-installed-p 'flycheck) (package-refresh-contents)
-  (package-install 'flycheck))
-(add-hook 'after-init-hook 'global-flycheck-mode)
+;; js2 mode, a better Javascript mode
+(unless (package-installed-p 'js2-mode)
+  (package-install 'js2-mode))
+;;(add-hook 'js-mode-hook 'js2-minor-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
-;; multiple-cursors
-(unless (package-installed-p 'multiple-cursors) (package-refresh-contents)
-  (package-install 'multiple-cursors))
+;; js2 refector mode
+(unless (package-installed-p 'js2-refactor)
+  (package-install 'js2-refactor))
+(require 'js2-refactor)
+(add-hook 'js2-mode-hook #'js2-refactor-mode)
+(js2r-add-keybindings-with-prefix "C-c j")
 
-;; Projectile is a project interaction library for Emacs
-(unless (package-installed-p 'projectile) (package-refresh-contents)
-  (package-install 'projectile))
-(projectile-global-mode)
+;; Lua mode
+(unless (package-installed-p 'lua-mode)
+  (package-install 'lua-mode))
 
-;; Fuzzy matching for Emacs ... a la Sublime Text.
-(unless (package-installed-p 'flx-ido) (package-refresh-contents)
-  (package-install 'flx-ido))
-(ido-mode 1)
-(ido-everywhere 1)
-(flx-ido-mode 1)
-
-;; Expand-region - extension to increase selected region by semantic units
-;; (unless (package-installed-p 'expand-region)
-;;   (package-install 'expand-region))
-;; (require 'expand-region)
-;; (global-set-key (kbd "C-=") 'er/expand-region)
-
-
-;; disable ido faces to see flx highlights.
-(setq ido-use-faces nil)
-
-
-;; INSTALL MODES
-
-(unless (package-installed-p 'elixir-mode) (package-refresh-contents)
+;; Elixir mode
+(unless (package-installed-p 'elixir-mode)
   (package-install 'elixir-mode))
 
-(unless (package-installed-p 'css-mode) (package-install 'css-mode)) (package-refresh-contents)
-(unless (package-installed-p 'ruby-mode) (package-install 'ruby-mode)) (package-refresh-contents)
-(add-hook 'html-mode-hook 'emmet-mode)
-(unless (package-installed-p 'css-mode) (package-install 'css-mode)) (package-refresh-contents)
-(unless (package-installed-p 'ruby-mode) (package-install 'ruby-mode)) (package-refresh-contents)
+;; Elixir Tooling Integration Into Emacs
+(unless (package-installed-p 'alchemist)
+  (package-install 'alchemist))
+
+;; REST Client
+(unless (package-installed-p 'restclient)
+  (package-install 'restclient))
+
+;; Powerline
+(unless (package-installed-p 'powerline)
+  (package-install 'powerline))
+
+
+;; Expand-region - extension to increase selected region by semantic units
+(unless (package-installed-p 'expand-region)
+  (package-install 'expand-region))
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+
+;; Conect with Dash.app
+(add-to-list 'load-path "~/.emacs.d/plugins/dash/")
+(autoload 'dash-at-point "dash-at-point"
+          "Search the word at point with Dash." t nil)
+(global-set-key "\C-cf" 'dash-at-point)
+(global-set-key "\C-ck" 'dash-at-point-with-docset)
