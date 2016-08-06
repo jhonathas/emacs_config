@@ -24,6 +24,7 @@
 
 ;; Use 2 spaces to indent code instead of tabs.
 (setq-default indent-tabs-mode nil)
+(setq indent-tabs-mode nil)
 (setq web-mode-markup-indent-offset 2)
 (setq ruby-deep-indent-paren nil)
 (setq-default tab-width 2)
@@ -40,6 +41,9 @@
 
 ;; Enable delete trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Enable replace tab with spaces
+(add-hook 'write-file-hooks (lambda () (untabify (point-min) (point-max))))
 
 ;; backup and auto save.
 (setq backup-inhibited t)
