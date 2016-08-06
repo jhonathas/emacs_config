@@ -43,7 +43,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; Enable replace tab with spaces
-(add-hook 'write-file-hooks (lambda () (untabify (point-min) (point-max))))
+;; (add-hook 'write-file-hooks (lambda () (untabify (point-min) (point-max))))
 
 ;; backup and auto save.
 (setq backup-inhibited t)
