@@ -41,9 +41,3 @@ there's a region, all lines that region covers will be duplicated."
 	(if (and arg (not (= 1 arg))) (message "%d lines copied" arg)))
 ;; optional key binding
 (global-set-key "\C-c\C-k" 'copy-line)
-
-
-;; expand-region - extension to increase selected region by semantic units
-(unless (package-installed-p 'expand-region) (package-install 'expand-region))
-(require 'expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
