@@ -42,10 +42,6 @@
   (package-install 'flycheck))
 (add-hook 'after-init-hook 'global-flycheck-mode)
 
-;; Scala-mode2
-(unless (package-installed-p 'scala-mode2)
-  (package-refresh-contents) (package-install 'scala-mode2))
-
 ;; multiple-cursors
 (unless (package-installed-p 'multiple-cursors)
   (package-install 'multiple-cursors))
@@ -77,15 +73,12 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ssp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
 
-
-(add-to-list 'load-path "/Users/jhonathas/.emacs.d/plugins/neotree")
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-
-(setq projectile-switch-project-action 'neotree-projectile-action)
-(setq neo-smart-open t)
-
+;; css-mode - an autonomous emacs major-mode for editing web templates
+(unless (package-installed-p 'css-mode) (package-install 'css-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
 
 ;; Integration emacs with Dash
 (add-to-list 'load-path "/Users/jhonathas/.emacs.d/plugins/dash/")
@@ -93,3 +86,7 @@
           "Search the word at point with Dash." t nil)
 (global-set-key "\C-cf" 'dash-at-point)
 (global-set-key "\C-ck" 'dash-at-point-with-docset)
+
+
+(unless (package-installed-p 'elixir-mode)
+  (package-install 'elixir-mode))
