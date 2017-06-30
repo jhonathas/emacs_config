@@ -191,3 +191,15 @@
 (unless (package-installed-p 'lorem-ipsum) (package-refresh-contents)
         (package-install 'lorem-ipsum))
 (require 'lorem-ipsum)
+
+
+;; ace jump mode major function
+(unless (package-installed-p 'ace-jump-mode) (package-refresh-contents)
+        (package-install 'ace-jump-mode))
+(require 'ace-jump-mode)
+(autoload
+  'ace-jump-mode
+  "ace-jump-mode"
+  "Emacs quick move minor mode"
+  t)
+(define-key global-map (kbd "C-c C-s") 'ace-jump-mode)
