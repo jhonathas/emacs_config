@@ -83,8 +83,8 @@
 (setq column-number-mode t)
 
 ;; Set Monaco as default font on mac
-(set-default-font "Monaco-15")
-(add-to-list 'default-frame-alist '(font . "Monaco-15"))
+(set-default-font "Monaco-16")
+(add-to-list 'default-frame-alist '(font . "Monaco-16"))
 
 ;; automatically insert the right matching bracket
 (electric-pair-mode 1)
