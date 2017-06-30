@@ -97,6 +97,11 @@
 ;; ORG mode
 (add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
 
+;; Typescript mode
+(unless (package-installed-p 'typescript-mode) (package-refresh-contents)
+        (package-install 'typescript-mode))
+
+
 ;;
 ;; INSTALL OTHER PACKAGES
 ;;
