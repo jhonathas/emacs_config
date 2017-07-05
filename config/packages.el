@@ -76,6 +76,17 @@
 (unless (package-installed-p 'elixir-mode) (package-refresh-contents)
         (package-install 'elixir-mode))
 
+(unless (package-installed-p 'alchemist) (package-refresh-contents)
+        (package-install 'alchemist))
+
+;; Flycheck Credo
+(unless (package-installed-p 'flycheck-credo) (package-refresh-contents)
+        (package-install 'flycheck-credo))
+(eval-after-load 'flycheck '(flycheck-credo-setup))
+(add-hook 'elixir-mode-hook 'flycheck-mode)
+(setq flycheck-check-syntax-automatically '(mode-enabled save))
+(setq flycheck-elixir-credo-strict t)
+
 (unless (package-installed-p 'ruby-mode) (package-refresh-contents)
         (package-install 'ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile\\'" . ruby-mode))
@@ -208,3 +219,24 @@
   "Emacs quick move minor mode"
   t)
 (define-key global-map (kbd "C-c C-s") 'ace-jump-mode)
+
+
+;; Git Time Machine
+(unless (package-installed-p 'git-timemachine) (package-refresh-contents)
+        (package-install 'git-timemachine))
+(require 'git-timemachine)
+
+
+;; AG
+(unless (package-installed-p 'ag) (package-refresh-contents)
+        (package-install 'ag))
+(require 'ag)
+
+
+;; Switch Window
+(unless (package-installed-p 'switch-window) (package-refresh-contents)
+        (package-install 'switch-window))
+(require 'switch-window)
+(setq switch-window-shortcut-style 'qwerty)
+(setq switch-window-qwerty-shortcuts
+      '("a" "s" "d" "f" "j" "k" "l" ";" "w" "e" "i" "o"))
