@@ -240,3 +240,22 @@
 (setq switch-window-shortcut-style 'qwerty)
 (setq switch-window-qwerty-shortcuts
       '("a" "s" "d" "f" "j" "k" "l" ";" "w" "e" "i" "o"))
+
+
+;; Vimish-fold
+(unless (package-installed-p 'vimish-fold) (package-refresh-contents)
+        (package-install 'vimish-fold))
+(require 'vimish-fold)
+(global-set-key (kbd "C-c v f") 'vimish-fold)
+(global-set-key (kbd "C-c v v") 'vimish-fold-delete)
+(vimish-fold-global-mode 1)
+
+;; Smex
+(unless (package-installed-p 'smex) (package-refresh-contents)
+        (package-install 'smex))
+(require 'smex)
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
