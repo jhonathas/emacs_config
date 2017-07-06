@@ -259,3 +259,11 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+;; Which-key
+(unless (package-installed-p 'which-key) (package-refresh-contents)
+        (package-install 'which-key))
+(require 'which-key)
+(which-key-mode)
+(which-key-setup-side-window-bottom)
+(setq which-key-popup-type 'minibuffer)
