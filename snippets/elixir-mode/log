@@ -2,7 +2,6 @@
 # name: log
 # key: log
 # --
-
 IO.puts "============="
 IO.inspect $0
 IO.puts "============="

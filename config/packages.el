@@ -54,6 +54,11 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ctp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx?$" . web-mode))
+(setq web-mode-markup-indent-offset 2
+        web-mode-css-indent-offset 2
+        web-mode-code-indent-offset 2)
+  (setq js-indent-level 2)
 
 ;; js2 mode, a better Javascript mode
 (unless (package-installed-p 'js2-mode) (package-refresh-contents)
@@ -78,6 +83,10 @@
 
 (unless (package-installed-p 'alchemist) (package-refresh-contents)
         (package-install 'alchemist))
+(global-company-mode)
+(require 'elixir-mode)
+(require 'alchemist)
+
 
 ;; Flycheck Credo
 (unless (package-installed-p 'flycheck-credo) (package-refresh-contents)
@@ -86,6 +95,7 @@
 (add-hook 'elixir-mode-hook 'flycheck-mode)
 (setq flycheck-check-syntax-automatically '(mode-enabled save))
 (setq flycheck-elixir-credo-strict t)
+
 
 (unless (package-installed-p 'ruby-mode) (package-refresh-contents)
         (package-install 'ruby-mode))
@@ -111,7 +121,6 @@
 ;; Typescript mode
 (unless (package-installed-p 'typescript-mode) (package-refresh-contents)
         (package-install 'typescript-mode))
-
 
 ;;
 ;; INSTALL OTHER PACKAGES
@@ -178,10 +187,6 @@
         yas-completing-prompt
         yas-no-prompt))
 
-;; Elixir Tooling Integration Into Emacs
-(unless (package-installed-p 'alchemist) (package-refresh-contents)
-        (package-install 'alchemist))
-
 ;; REST Client
 (unless (package-installed-p 'restclient) (package-refresh-contents)
         (package-install 'restclient))
@@ -226,12 +231,10 @@
         (package-install 'git-timemachine))
 (require 'git-timemachine)
 
-
 ;; AG
 (unless (package-installed-p 'ag) (package-refresh-contents)
         (package-install 'ag))
 (require 'ag)
-
 
 ;; Switch Window
 (unless (package-installed-p 'switch-window) (package-refresh-contents)
@@ -240,7 +243,6 @@
 (setq switch-window-shortcut-style 'qwerty)
 (setq switch-window-qwerty-shortcuts
       '("a" "s" "d" "f" "j" "k" "l" ";" "w" "e" "i" "o"))
-
 
 ;; Vimish-fold
 (unless (package-installed-p 'vimish-fold) (package-refresh-contents)
