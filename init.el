@@ -21,7 +21,7 @@
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(package-selected-packages
    (quote
-    (nvm which-key ## smex hlinum vimish-fold ag flycheck-credo git-timemachine ace-jump-mode lorem-ipsum expand-region powerline restclient alchemist flx-ido projectile inf-ruby flycheck magit emmet-mode elixir-mode lua-mode js2-refactor js2-mode web-mode markdown-mode yaml-mode slim-mode scss-mode)))
+    (avy avy-mode graphql-mode nvm which-key ## smex hlinum vimish-fold ag flycheck-credo git-timemachine ace-jump-mode lorem-ipsum expand-region powerline restclient alchemist flx-ido projectile inf-ruby flycheck magit emmet-mode elixir-mode lua-mode js2-refactor js2-mode web-mode markdown-mode yaml-mode slim-mode scss-mode)))
  '(safe-local-variable-values (quote ((encoding . utf-8)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

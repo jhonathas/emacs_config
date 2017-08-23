@@ -81,12 +81,11 @@
 (unless (package-installed-p 'elixir-mode) (package-refresh-contents)
         (package-install 'elixir-mode))
 
-(unless (package-installed-p 'alchemist) (package-refresh-contents)
-        (package-install 'alchemist))
-(global-company-mode)
-(require 'elixir-mode)
-(require 'alchemist)
-
+;; (unless (package-installed-p 'alchemist) (package-refresh-contents)
+;;         (package-install 'alchemist))
+;; (global-company-mode)
+;; (require 'elixir-mode)
+;; (require 'alchemist)
 
 ;; Flycheck Credo
 (unless (package-installed-p 'flycheck-credo) (package-refresh-contents)
@@ -213,18 +212,15 @@
         (package-install 'lorem-ipsum))
 (require 'lorem-ipsum)
 
-
-;; ace jump mode major function
-(unless (package-installed-p 'ace-jump-mode) (package-refresh-contents)
-        (package-install 'ace-jump-mode))
-(require 'ace-jump-mode)
-(autoload
-  'ace-jump-mode
-  "ace-jump-mode"
-  "Emacs quick move minor mode"
-  t)
-(define-key global-map (kbd "C-c C-s") 'ace-jump-mode)
-
+;; avy mode
+(unless (package-installed-p 'avy) (package-refresh-contents)
+        (package-install 'avy))
+(require 'avy)
+(global-set-key (kbd "s-k") 'avy-kill-region)
+(global-set-key (kbd "s-l") 'avy-goto-line)
+(global-set-key (kbd "s-j") 'avy-goto-subword-1)
+(global-set-key (kbd "s-J") 'avy-goto-char)
+(setq avy-style 'at-full)
 
 ;; Git Time Machine
 (unless (package-installed-p 'git-timemachine) (package-refresh-contents)

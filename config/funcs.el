@@ -41,3 +41,15 @@ there's a region, all lines that region covers will be duplicated."
 	(if (and arg (not (= 1 arg))) (message "%d lines copied" arg)))
 ;; optional key binding
 (global-set-key "\C-c\C-k" 'copy-line)
+
+
+;; Copiar o path do arquivo para a memória
+(defun clip-file ()
+  "Put the current file name on the clipboard"
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      (file-name-directory default-directory)
+                    (buffer-file-name))))
+    (when filename
+      (x-select-text filename))))
+(global-set-key (kbd "C-c c") 'clip-file)
