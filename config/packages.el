@@ -270,3 +270,20 @@
 (which-key-mode)
 (which-key-setup-side-window-bottom)
 (setq which-key-popup-type 'minibuffer)
+
+
+;; Writeroom-mode
+(unless (package-installed-p 'writeroom-mode) (package-refresh-contents)
+        (package-install 'writeroom-mode))
+(require 'writeroom-mode)
+(with-eval-after-load 'writeroom-mode
+  (define-key writeroom-mode-map (kbd "C-M-<") #'writeroom-decrease-width)
+  (define-key writeroom-mode-map (kbd "C-M->") #'writeroom-increase-width)
+  (define-key writeroom-mode-map (kbd "C-M-=") #'writeroom-adjust-width))
+(global-set-key (kbd "<C-return>") 'writeroom-mode)
+
+;; nlinum
+(unless (package-installed-p 'nlinum) (package-refresh-contents)
+        (package-install 'nlinum))
+(require 'nlinum)
+(global-nlinum-mode t)

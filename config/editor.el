@@ -79,12 +79,12 @@
 (global-hl-line-mode +1)
 
 ;; Show line numbers with an empty space after each number.
-(global-linum-mode t)
-(setq column-number-mode t)
+;; (global-linum-mode t)
+;; (setq column-number-mode t)
 
 ;; Set Monaco as default font on mac
-(set-default-font "Monaco-16")
-(add-to-list 'default-frame-alist '(font . "Monaco-16"))
+(set-default-font "Monaco-17")
+(add-to-list 'default-frame-alist '(font . "Monaco-17"))
 
 ;; automatically insert the right matching bracket
 (electric-pair-mode 1)
