@@ -216,10 +216,11 @@
 (unless (package-installed-p 'avy) (package-refresh-contents)
         (package-install 'avy))
 (require 'avy)
-(global-set-key (kbd "s-k") 'avy-kill-region)
 (global-set-key (kbd "s-l") 'avy-goto-line)
 (global-set-key (kbd "s-j") 'avy-goto-subword-1)
 (global-set-key (kbd "s-J") 'avy-goto-char)
+(global-set-key (kbd "s-k") 'avy-kill-region)
+(global-set-key (kbd "s-K") 'avy-kill-whole-line)
 (setq avy-style 'at-full)
 
 ;; Git Time Machine
