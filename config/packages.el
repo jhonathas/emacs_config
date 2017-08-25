@@ -219,8 +219,12 @@
 (global-set-key (kbd "s-l") 'avy-goto-line)
 (global-set-key (kbd "s-j") 'avy-goto-subword-1)
 (global-set-key (kbd "s-J") 'avy-goto-char)
-(global-set-key (kbd "s-k") 'avy-kill-region)
-(global-set-key (kbd "s-K") 'avy-kill-whole-line)
+(global-unset-key (kbd "s-k"))
+(global-set-key (kbd "s-k r") 'avy-kill-region)
+(global-set-key (kbd "s-k l") 'avy-kill-whole-line)
+(global-unset-key (kbd "s-m"))
+(global-set-key (kbd "s-m r") 'avy-move-region)
+(global-set-key (kbd "s-m l") 'avy-move-line)
 (setq avy-style 'at-full)
 
 ;; Git Time Machine
