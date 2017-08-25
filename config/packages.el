@@ -281,6 +281,8 @@
   (define-key writeroom-mode-map (kbd "C-M->") #'writeroom-increase-width)
   (define-key writeroom-mode-map (kbd "C-M-=") #'writeroom-adjust-width))
 (global-set-key (kbd "<C-return>") 'writeroom-mode)
+(setq writeroom-restore-window-config t)
+(setq writeroom-width 120)
 
 ;; nlinum
 (unless (package-installed-p 'nlinum) (package-refresh-contents)
