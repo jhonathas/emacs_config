@@ -34,3 +34,6 @@
 
 (global-set-key (kbd "<M-up>") 'backward-paragraph)
 (global-set-key (kbd "<M-down>") 'forward-paragraph)
+
+(global-set-key (kbd "<s-up>") 'scroll-up-line)
+(global-set-key (kbd "<s-down>") 'scroll-down-line)
