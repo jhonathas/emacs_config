@@ -54,11 +54,15 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ctp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx?$" . web-mode))
 (setq web-mode-markup-indent-offset 2
         web-mode-css-indent-offset 2
         web-mode-code-indent-offset 2)
   (setq js-indent-level 2)
+
+;; rjsx-mode
+(unless (package-installed-p 'rjsx-mode) (package-refresh-contents)
+        (package-install 'rjsx-mode))
+(add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
 
 ;; js2 mode, a better Javascript mode
 (unless (package-installed-p 'js2-mode) (package-refresh-contents)
@@ -109,7 +113,7 @@
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
-(add-hook 'web-mode-hook  'emmet-mode)
+(add-hook 'rjsx-mode-hook  'emmet-mode)
 (add-hook 'html-mode-hook 'emmet-mode)
 (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent 2 spaces.
 (define-key emmet-mode-keymap (kbd "C-j") nil) ;; C-RET is enough
