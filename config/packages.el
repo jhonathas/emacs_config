@@ -101,6 +101,16 @@
 
 (setq alchemist-test-truncate-lines nil)
 
+(add-to-list 'display-buffer-alist
+             `(,(rx bos (or "*alchemist test report*"
+                            "*alchemist mix*"
+                            "*alchemist help*"))
+                    (display-buffer-reuse-window
+                     display-buffer-in-side-window)
+               (reusable-frames . visible)
+               (side            . bottom)
+               (window-width   . 0.5)))
+
 ;; Open a new line with a pipe on control return
 (defun mg/open-new-line-with-pipe ()
      "open a new line with a pipe"
@@ -330,3 +340,18 @@
         (package-install 'nlinum))
 (require 'nlinum)
 (global-nlinum-mode t)
+
+
+
+
+
+
+;; String inflection
+(unless (package-installed-p 'string-inflection) (package-refresh-contents)
+        (package-install 'string-inflection))
+(require 'string-inflection)
+(global-set-key (kbd "C-c i") 'string-inflection-cycle)
+(global-set-key (kbd "C-c C") 'string-inflection-camelcase)        ;; Force to CamelCase
+(global-set-key (kbd "C-c L") 'string-inflection-lower-camelcase)  ;; Force to lowerCamelCase
+(global-set-key (kbd "C-c J") 'string-inflection-java-style-cycle) ;; Cycle through Java styles
+(global-set-key (kbd "C-c u") 'string-inflection-underscore) ;; undescorer

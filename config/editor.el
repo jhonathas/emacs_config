@@ -101,3 +101,7 @@
 	(define-key ido-completion-map (kbd "C-n") 'ido-next-match)
 	(define-key ido-completion-map (kbd "C-p") 'ido-prev-match))
 (add-hook 'ido-setup-hook 'ido-define-keys)
+
+;; Resize buffer
+(global-set-key (kbd "<C-up>") 'shrink-window)
+(global-set-key (kbd "<C-down>") 'enlarge-window)
