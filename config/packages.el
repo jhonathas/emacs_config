@@ -54,6 +54,7 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ctp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode))
 (setq web-mode-markup-indent-offset 2
         web-mode-css-indent-offset 2
         web-mode-code-indent-offset 2)
@@ -77,19 +78,43 @@
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
 (js2r-add-keybindings-with-prefix "C-c j")
 
+
+
+
 ;; Lua mode
 (unless (package-installed-p 'lua-mode) (package-refresh-contents)
         (package-install 'lua-mode))
+
+
+
+
 
 ;; Elixir mode
 (unless (package-installed-p 'elixir-mode) (package-refresh-contents)
         (package-install 'elixir-mode))
 
-;; (unless (package-installed-p 'alchemist) (package-refresh-contents)
-;;         (package-install 'alchemist))
-;; (global-company-mode)
-;; (require 'elixir-mode)
-;; (require 'alchemist)
+(unless (package-installed-p 'alchemist) (package-refresh-contents)
+        (package-install 'alchemist))
+(global-company-mode)
+(require 'elixir-mode)
+(require 'alchemist)
+
+(setq alchemist-test-truncate-lines nil)
+
+;; Open a new line with a pipe on control return
+(defun mg/open-new-line-with-pipe ()
+     "open a new line with a pipe"
+     (interactive)
+     (progn
+       (newline)
+       (insert "|> ")
+       (indent-according-to-mode)))
+(define-key elixir-mode-map [(control return)] #'mg/open-new-line-with-pipe)
+
+
+
+
+
 
 ;; Flycheck Credo
 (unless (package-installed-p 'flycheck-credo) (package-refresh-contents)
@@ -133,6 +158,17 @@
 (unless (package-installed-p 'magit) (package-refresh-contents)
         (package-install 'magit))
 (global-set-key (kbd "C-c g") 'magit-status)
+(defun my-truncate-lines ()
+  (setq truncate-lines t))
+(add-hook 'magit-diff-mode-hook 'my-truncate-lines)
+
+;; phi-search
+(unless (package-installed-p 'phi-search) (package-refresh-contents)
+        (package-install 'phi-search))
+(require 'phi-search)
+
+(global-set-key (kbd "C-s") 'phi-search)
+(global-set-key (kbd "C-r") 'phi-search-backward)
 
 ;; multiple-cursors
 (unless (package-installed-p 'multiple-cursors) (package-refresh-contents)
@@ -150,6 +186,7 @@
 (global-set-key (kbd "C-<") 'mc/skip-to-next-like-this)
 (global-set-key (kbd "C-{") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-}") 'mc/skip-to-previous-like-this)
+
 
 ;;flycheck for on the fly syntax checking
 (unless (package-installed-p 'flycheck) (package-refresh-contents)
